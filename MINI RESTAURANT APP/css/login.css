@@ -1,0 +1,47 @@
+main{
+    border: 3px solid green;
+    height: 80vh;
+}
+#login {
+background-color: white;
+height: 80%;
+width: 80%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+#login>div {
+border-radius: 2%;
+display: grid;
+height: 30%;
+width: 30%;
+row-gap: 3%;
+}
+label {
+
+display: block;
+font-size: smaller;
+font-weight: 600;
+position: relative;
+top: 10px;
+left: 0;
+}
+footer{
+text-align: center;
+background-color: aquamarine;
+height: 8vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+footer>button{
+background-color: brown;
+color: white;
+height: 50%;
+border: 1px solid brown;
+}
+footer>button:hover{
+background-color: rgb(176, 122, 122);
+}

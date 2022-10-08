@@ -1,0 +1,72 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+
+#main2 {
+    border: 1px solid black;
+    height: 700px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+#form {
+
+    display: grid;
+    width: 90%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: auto;
+    row-gap: 25px;
+}
+
+#form>div {
+    display: grid;
+    row-gap: 25px;
+    width: 400px;
+}
+
+label {
+    display: block;
+    font-size: small;
+    color: black;
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+
+label span {
+    color: red;
+}
+
+input {
+    width: 96%;
+    height: 30px;
+    border: 1px solid rgb(198, 191, 191);
+    border-radius: 4px;
+    padding-left: 8px;
+}
+
+
+#submit-p {
+    width: 100%;
+    height: 30px;
+}
+
+#submit {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(255, 0, 119);
+    border-radius: 7px;
+    color: white;
+    font-weight: 501;
+    border: 1px transparent;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+}
