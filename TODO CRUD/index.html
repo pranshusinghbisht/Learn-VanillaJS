@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO CRUD</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="addItem">
+
+        <input type="text" id="todo" placeholder="Add Todo">
+        <button onclick="addTodo()">Add Todo</button>
+    </div>
+    <main>
+    <div id="container"></div>
+    <div id="completePortion">
+    <a onclick="complete()">Tap to show complete List</a>
+    <div id="completeList"></div>
+</main>
+</div>
+</body>
+</html>
+<script src="./script.js"></script>

@@ -1,0 +1,70 @@
+#addItem{
+    display: grid;
+    row-gap: 15%;
+    justify-content: center;
+    border: 1px solid black;
+    height: 10vh
+    
+}
+main{
+    height: 90vh;
+    display: flex;
+}
+#container{
+    width: 75%;
+    height: 100%;
+    background-color: aquamarine;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: auto auto auto;
+    column-gap: 2%;
+}
+#container>div{
+    /* margin: auto; */
+    text-align: center;
+    background-color: brown;
+    height:fit-content;
+    width: fit-content;
+    border-radius: 5%;
+}
+
+#completePortion{
+    width: 25%;
+    height: 100%;
+    background-color: rgb(214, 176, 176);
+}
+
+#completePortion{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5%;
+}
+
+
+a{
+    position: relative;
+    top: 10px;
+ border-radius: 15%;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    
+}
+
+#completePortion>div{
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+
+#completePortion>div>div{
+    background-color: rgb(237, 227, 178);
+    height:fit-content;
+    width: 100%;
+    border-radius: 5%;
+    border: 1px solid black;
+    
+}
