@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMAZON PRIME</title>
+    <!-- custom css -->
+    <link rel = "stylesheet" href = "main.css">
+</head>
+<body>
+    
+    <div class = "wrapper">
+        <!-- logo -->
+        <div class = "logo">
+            <div class = "container">
+                <p style="text-align: center;">Amazon Prime <span>Video</span></p>
+            </div>
+        </div>
+        <!-- end of logo -->
+        <!-- search container -->
+        <div class = "search-container">
+            <div class = "search-element">
+                <h3>Search Movie:</h3>
+                <input type = "text" class = "form-control" placeholder="Search Movie Title ..." id = "msb" onkeyup="debouncing(findMovies,1000)" onclick = "debouncing(findMovies,1000)">
+
+                <div class = "searchList" id = "searchList">
+                </div>
+            </div>
+        </div>
+        <!-- end of search container -->
+        
+
+        <!-- result container -->
+        <div class = "container">
+            <div class = "result-container">
+                <div class = "resultBox" id = "resultBox">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>/
+<script src = "script.js"></script>
