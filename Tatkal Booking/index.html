@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatkal Booking</title>
+    <style>
+        body{
+            width: 100%;
+            height: auto;
+            background-color: aquamarine;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #container{
+            width: 50%;
+            height: 400px;
+            display: grid;
+            row-gap: 5%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tatkal Booking</h1>
+    <div id="container">
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="text" id="phone" placeholder="Phone Number">
+    <input type="text" id="from_city" placeholder="From City">
+    <input type="text" id="to_city" placeholder="To City">
+
+    <button onclick="submit()">Submit</button>
+</div>
+</body>
+</html>
+<script>    
+    let seats = 100;
+    let waiting = 106;
+    setInterval(() =>{
+        waiting--;
+        // console.log(waiting)
+    },3000)
+    
+    let submit = () => {
+        let name = document.getElementById('name').value;
+        let phone = document.getElementById('phone').value;
+        let from_city = document.getElementById('from_city').value;
+        let to_city = document.getElementById('to_city').value;
+        waiting++;
+        let p = new Promise((res, rej) => {
+            setInterval(() => {
+        if(waiting <= seats){
+            res('confirmed');
+        }
+    })
+});
+p.then((res)=> {
+    let obj = {
+        name,
+        phone,
+        from_city,
+        to_city,
+        status: `${res}`,
+    }
+    // console.log('obj:', obj)
+    alert("Ticket Confirm and press Ok for Ticket")
+    localStorage.setItem("user_ticket",JSON.stringify(obj))
+    window.location.href="./ticket_page.html"
+});
+    };
+</script>
+    
+    

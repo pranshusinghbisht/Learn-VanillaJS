@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ticket page</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        #ticket{
+            background-color: rgb(106, 106, 194);
+            height: 400px;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        #container{
+            border: 1px solid black;
+            width: 70%;
+            height: 70%;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="ticket">
+        <h1>IRCTC - Ticket</h1>
+        <div id="container"></div>
+    </div>
+</body>
+</html>
+<script>
+    let ticket_data = JSON.parse(localStorage.getItem("user_ticket"))
+    console.log('ticket_data:', ticket_data);
+
+    let container = document.getElementById("container");
+
+    let append = () => {
+       let name =  document.createElement("h2");
+        name.innerHTML = `Name: ${ticket_data.name}`;
+
+        let phone = document.createElement("h2");
+        phone.innerHTML = `Phone Number: ${ticket_data.phone}`;
+
+        let from_city = document.createElement("h2");
+        from_city.innerHTML = `From City: ${ticket_data.from_city}`;
+
+        let to_city = document.createElement("h2");
+        to_city.innerHTML = `To City: ${ticket_data.to_city}`;
+
+        let status = document.createElement("h2");
+        status.innerHTML = `Status: ${ticket_data.status}`;
+
+        container.append(name,phone,from_city,to_city,status)
+
+    }
+
+    append()
+</script>
