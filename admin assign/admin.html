@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form action="" id="form">
+            <input type="text" id="name" placeholder="Product Name">
+            <input type="text" id="category" placeholder="Category">
+            <input type="url" id="image" src="" placeholder="image url">
+            <input type="number" id="price" placeholder="Price">
+            <select id="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <select name="" id="sold">
+                <option value="False">false</option>
+                <option value="True">True</option>
+            </select>
+            <!-- <input type=""> -->
+            <input type="submit" id="submit" value="submit">
+        </form>
+    </div>
+</body>
+<script>
+document.querySelector("form").addEventListener("submit", studentData);
+
+ let stuArr = [];
+
+function student(a,b,c,d,e,f){
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        this.d= d;
+        this.e = e;
+        this.f = f;
+    }
+
+function studentData(el){
+    el.preventDefault();
+
+    let a = document.getElementById("name").value;
+let b = document.getElementById("category").value;
+let c = document.getElementById("image").value;
+let d = document.getElementById("price").value;
+let e = document.getElementById("gender").value;
+let f = document.getElementById("sold").value;
+
+    let p = a;
+    let q = b;
+    let r = c;
+    let s = d;
+    let t = e;
+    let u = f;
+
+        let stu = new student(p ,q ,r ,s ,t, u);
+    // // console.log(stu)
+
+    stuArr.push(stu);
+
+    console.log(stuArr)
+    localStorage.setItem("student-Arr",JSON.stringify(stuArr));
+
+}
+
+</script>
