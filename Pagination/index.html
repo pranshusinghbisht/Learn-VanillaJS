@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+    <div id="buttons"></div>
+</body>
+</html>
+<script>
+   let url =  "https://jsonplaceholder.typicode.com/comments";
+   let data = [];
+
+   let getData = async () => {
+    let res = await fetch(url);
+    res = await res.json();
+    return res;
+}
+
+let main = async () => {
+    data = await getData();
+    renderDom(0)
+    showButtons(1);
+    // console.log(data[0])
+   }
+
+   main();
+
+   let renderDom = (index) => {
+    let cont = document.getElementById("container");
+    cont.innerHTML = null;
+
+    //page no:1
+
+    let start = 10*index;
+    let end = start + 10;
+
+    let per_page_data = data.slice(start,end);
+
+    per_page_data.forEach(({id,name})=>{
+        let p = document.createElement('p');
+        p.innerText = `${id} ${name}`
+        cont.append(p)
+    })
+    showButtons(index+1)
+   };
+
+   let showButtons = (pageNo) => {
+    let btn = document.getElementById("buttons")
+    btn.innerHTML = null;
+
+    let start = 1;
+
+    if(pageNo > 4){
+        start = pageNo - 1;
+    }
+
+    for(let i= start; i<=start+9; i++){
+        let b = document.createElement('button');
+    b.innerText = i;
+    b.onclick = () => {
+        renderDom(i-1);
+    };
+    btn.append(b);
+    }
+   };
+
+   
+</script>
