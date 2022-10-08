@@ -1,0 +1,15 @@
+#container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 5%;
+    margin-top: 5%;
+
+}
+#container>div{
+    border: 1px solid black;
+    background-color: chartreuse;
+}
+img{
+    height: 100px;
+}

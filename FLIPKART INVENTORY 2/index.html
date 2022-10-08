@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Inventory</title>
+    <link rel="stylesheet" href="./style/navbar.css">
+    <style>
+        body>div{
+            display: grid;
+            justify-content: center;
+            margin-top: 10%;
+            row-gap: 3%;
+        }
+        input , textarea, button{
+            width: 100%;
+        }
+        button{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header id="navbar"></header>
+    <div>
+        <input type="text" id="product-name" placeholder="Enter Your Product Name">
+        <input type="url" id="product-img" placeholder="Product Image Link">
+        <select id="category">
+            <option value="trouser">Trouser</option>
+            <option value="shoes">Shoes</option>
+            <option value="tshirt">T-Shirt</option>
+        </select>
+        <textarea id="product-details" cols="30" rows="10" placeholder="product details"></textarea>
+        <input type="text" id="product-price" placeholder="Enter Price">
+        <button class="button" onclick="addProduct()">Submit</button>
+    </div>
+</body>
+</html>
+<script  type="module">
+    import navbar from './components/navbar.js';
+document.getElementById("navbar").innerHTML=navbar();
+</script>
+<script src="./scripts/index.js"></script>

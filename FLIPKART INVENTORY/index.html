@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        main{
+            height: 80vh;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main>div{
+            width: 30%;
+            display: grid;
+            height: 60%;
+            row-gap: 2%;
+        }
+    </style>
+</head>
+<body>
+    <header id="nav">
+    </header>
+    <main>
+        <div>
+            <select id="product-category">
+                <option value="" selected>Select Category</option>
+                <option value="trousers">trousers</option>
+                <option value="shoes">shoes</option>
+                <option value="t-shirts">t-shirts</option>
+            </select>
+            <input type="text" id="product-name" placeholder="Enter Your Product Name">
+            <input type="url" id="product-img" placeholder="Product Image Link">
+            <textarea id="product-details" cols="30" rows="10" placeholder="product details"></textarea>
+            <button class="button" onclick="addProduct()">Submit</button>
+        </div>
+    </main>
+</body>
+</html>
+<script src="./scripts/index.js"></script>
+<script type="module">
+import navbar from "./components/navbar.js";
+document.getElementById('nav').innerHTML = navbar();
+</script>
