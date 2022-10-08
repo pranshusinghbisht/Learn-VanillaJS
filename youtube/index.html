@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid grey;
+    position: sticky;
+    top: 0;
+    background-color: pink;
+    justify-content: center;
+    align-items: center;
+}
+#nav{
+    font-size: larger;
+    height: 70%;
+    width: 60%;
+  text-align: center;
+
+}
+
+#nav>#query{
+    width: 50%;
+  height: 52%;
+  padding-left: 10px;
+}
+#nav>button{
+    width: 70px;
+    height:36px;
+}
+#container{
+    display: grid;
+    width: 90%;
+    grid-template-areas: "b1 b1 b1 b1 b1";
+    height: auto;
+    margin: auto;
+    gap: 25px;
+}
+#container>div{
+    padding: 7px 2px 7px 7px;
+    width: 100%;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    display: grid;
+justify-content: center;
+}
+#container>div>img{
+    width: 230px;
+    height: 200px;
+}
+#container>div>h5{
+    width: 230px;
+}
+
+    </style>
+</head>
+<body>
+    <button onclick="filter()">Sort</button>
+    <header><nav id="nav">
+    <h1>Youtube</h1>
+    <input type="text" id="query">
+    <button onclick="getData()">Search</button>
+    </nav></header>
+    <div id="container">
+    </div>
+</body>
+</html>
+<script>
+
+    let API_KEY = "AIzaSyCPw0Du0CKWAia9o3DI82Q6tfithe9nMqk" 
+    let container = document.getElementById("container");
+
+let getData = async () => {
+try{
+    let query = document.getElementById('query').value;
+    let res = await fetch (`https://youtube.googleapis.com/youtube/v3/search?q=${query}&key=${API_KEY}&part=snippet&maxResults=20`)
+
+    let {items}   = await res.json(); //items => data.item
+
+let arr =  items;
+// console.log('arr:', arr)
+
+appendVideos(arr)
+}
+catch(error){}
+}
+
+let appendVideos = (data) => {
+
+    container.innerHTML = "";
+
+    data.forEach(({snippet:{ title }, id:{videoId},snippet:{ thumbnails:{ high:{url}} }}) => {
+
+let div = document.createElement("div");
+div.setAttribute("class","container-child")
+
+let image = document.createElement("img");
+image.src = url;
+
+let Ntitle = document.createElement("h5");
+Ntitle.innerText = title;
+
+div.append(image,Ntitle);
+container.append(div);
+    });
+    z(data)
+}
+
+function z(data){
+    let a = document.getElementById("container").querySelectorAll(".container-child");
+    
+    for(let i=0; i<a.length; i++){
+        a[i].onclick = function(){
+            // console.log(this)
+            // console.log(data[i])
+                // console.log(i+1)
+                
+                   let c = {title: this.innerText,
+                    videoId: data[i].id.videoId,
+                    }
+    window.location.href = "save.html"
+                    
+        localStorage.setItem("video",JSON.stringify(c))
+    }
+    }
+    }
+    let filter = async () =>{
+    let data = await getData(q);
+    data = data.filter((el)=>{
+       return el.snippet.channelId === "UC0PKLLmL8pIJLjOI1gBH_pA";
+    })
+    appendVideos(data);
+}
+
+
+
+fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=In&fields=items(id%2Csnippet)&key=${API_KEY}&maxResults=20`
+).then(res=>res.json()).then(data=>{
+console.log(data);
+data.items.forEach(item=>{
+getChannel(item);
+    })
+}).catch(error=>console.log(error));
+
+const getChannel=(daTa)=>{
+fetch("https://youtube.googleapis.com/youtube/v3/channels?" + new URLSearchParams({
+    key:API_KEY,
+    part:"snippet",
+    id: daTa.snippet.channelId
+}))
+.then(res=>res.json()).then(data=>{
+    console.log(data);
+    daTa.Thumbnail=data.items[0].snippet.thumbnails.high.url;
+    display(daTa);   
+    
+})
+
+}
+const display=(data)=>{
+    container.innerHTML +=`
+    <div onclick="window.location.href = 'save.html'">
+    <img src="${data.snippet.thumbnails.high.url}">
+    <h5>${data.snippet.title}</h5>
+    </div>
+ `
+}
+
+
+
+</script>

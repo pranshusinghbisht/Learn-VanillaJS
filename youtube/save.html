@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube-Save-Page</title>
+    <style>
+
+        #container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 800px;
+            border: 1px solid black;
+        }
+        iframe{
+            width: 60vw;
+            height: 50vh ;
+        }
+    </style>
+</head>
+<body>
+    <button id="backpage" onclick="goBack()">Back Page</button>
+    <div id="container">
+
+
+    </div>
+    
+</body>
+</html>
+<script>
+    let data = JSON.parse(localStorage.getItem("video"));
+    console.log("a",data)
+    goBack=()=>{
+        window.location.href = "index.html";
+    }
+
+    document.getElementById("container").innerHTML=`
+    <div>
+        <iframe src="https://www.youtube.com/embed/${data.videoId}" frameborder="0" height="100%" width="100%" allow="fullscreen"></iframe>
+            <h5>
+                ${data.title}
+            </h5>
+        </div>
+    `
+</script>
