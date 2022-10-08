@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/inputs.css">
+</head>
+<body>
+    <header id="nav"></header>
+    <div>
+        <input type="text" placeholder="Name" id="name">
+        <input type="email" id="email" placeholder="email">
+        <input type="password" id="password" placeholder="password">
+        <input type="text" id="username" placeholder="username">
+        <input type="text" id="mobile" placeholder="mobile no">
+        <input type="text" id="desc" placeholder="description">
+        <button onclick="register()">Submit</button>
+    </div>
+</body>
+</html>
+<script src="./scripts/Signup.js"></script>
+<script type="module">
+import {navbar} from './components/navbar.js';
+document.getElementById("nav").innerHTML = navbar();
+let data = JSON.parse(localStorage.getItem("cart"))
+document.getElementById("numItem").innerText=data.length;
+
+let Login = localStorage.getItem("Login");
+
+let Checkout = document.getElementById("Checkout");
+Checkout.addEventListener("click",function(){
+    if(Login == 'false'){
+        alert("Please Login First")
+    }
+    else if(Login == null){
+        alert("Please Login First")
+    }
+    else{
+        window.location.href="./Checkout.html"
+    }
+})
+</script>

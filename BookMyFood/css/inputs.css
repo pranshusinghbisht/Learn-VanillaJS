@@ -1,0 +1,13 @@
+body>div{
+    display: grid;
+    width: 50%;
+    justify-content: center;
+    background-color: aquamarine;
+    border: 2px solid black;
+    margin: auto;
+    row-gap: 10px;
+
+}
+input,button{
+    height: 20px;
+}

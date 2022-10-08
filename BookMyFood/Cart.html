@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/container.css">
+    <style></style>
+</head>
+<body>
+    <header id="nav"></header>
+    <div id="container"></div>
+</body>
+</html>
+<script src="./scripts/Cart.js"></script>
+<script type="module">
+import {navbar} from './components/navbar.js';
+document.getElementById("nav").innerHTML = navbar();
+let data = JSON.parse(localStorage.getItem("cart"))
+document.getElementById("numItem").innerText=data.length;
+
+let Login = localStorage.getItem("Login");
+
+let Checkout = document.getElementById("Checkout");
+Checkout.addEventListener("click",function(){
+    if(Login == 'false'){
+        alert("Please Login First")
+    }
+    else if(Login == null){
+        alert("Please Login First")
+    }
+    else{
+        window.location.href="./Checkout.html"
+    }
+})
+</script>
