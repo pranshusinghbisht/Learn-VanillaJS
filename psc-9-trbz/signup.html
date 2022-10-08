@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        input{
+            display: block;
+        }
+
+        #navbar{
+            background-color: aquamarine;
+            height: 50px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <nav id="navbar"></nav>
+    <div>
+    <input type="text" placeholder="name"  id="name">
+    <input type="text" id="email" placeholder="email">
+    <input type="text" id="username" placeholder="username">
+
+    <input type="text" id="password" placeholder="password">
+    <input type="text" placeholder="mobile" id="mobile">
+    <input type="text" id="description" placeholder="description">
+    <button id="submit">Register</button>
+</div>
+</body>
+</html>
+<script  type="module">
+    import navbar from './components/navbar.js';
+document.getElementById("navbar").innerHTML=navbar();
+</script>
+<script src="scripts/signup.js"></script>

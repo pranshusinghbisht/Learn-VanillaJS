@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        input{
+            display: block;
+        }
+
+        #navbar{
+            background-color: aquamarine;
+            height: 50px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+
+    </nav>
+    <input type="text" id="username" placeholder="Enter Username">
+    <input type="text" id="password" placeholder="Enter Password">
+    <button id="submit">Login</button>
+</body>
+</html>
+<script type="module">
+import navbar from './components/navbar.js';
+document.getElementById("navbar").innerHTML=navbar();
+
+</script>
+<script src="scripts/login.js"></script> 

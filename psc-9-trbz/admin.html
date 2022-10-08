@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="menu_input">
+        <input type="text" id="image" placeholder="Menu Image">
+        <input type="text" id="title" placeholder="Menu Title">
+        <input type="text" id="price" placeholder="MMenu Price">
+        <button onclick="submit()">Submit</button>
+    </div>
+</body>
+<script>
+    let admin={
+        name:"Pranshu",
+        email:"Pranshu@gmail.com",
+    };
+    
+    let submit=async()=>{
+        let user_details=JSON.parse(localStorage.getItem("user_details"));
+        if(!user_details){
+            alert("Log in again");
+            window.location.href="login.html";
+        }
+        let user=await getProfile(user_details.username, user_details.token);
+    
+    if (user.email!==admin.email){
+        alert("Not Authorised");
+        return;
+    }
+
+    let item={
+        id:Date.now(),
+        title:document.getElementById("title").value,
+        image:document.getElementById("image").value,
+        price:document.getElementById("price").value,
+    };
+
+    let res=await fetch("http://localhost:3000/api/menu",{
+        method:"POST",
+        body:JSON.stringify(item),
+        headers:{
+            "Content-Type":"application/json",
+        },
+    });
+    };
+
+    let getProfile=async(username, token)=>{
+        console.log(username);
+        let res=await fetch(`https://masai-api-mocker.herokuapp.com/user/${username}`,
+        {
+            headers:{
+                Authorization:`Bearer ${token}`,
+            },
+        });
+
+    res = await res.json();
+
+    return res;
+    };
+
+</script>
+</html>
