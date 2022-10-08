@@ -1,0 +1,27 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": "4",
+      "title": "asdf",
+      "author": "asdf"
+    },
+    {
+      "id": "5",
+      "title": "asdf",
+      "author": "asdf"
+    },
+    {
+      "title": "hritu",
+      "id": "499"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
