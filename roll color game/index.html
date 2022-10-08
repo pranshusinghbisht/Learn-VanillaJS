@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(176, 166, 233);
+        }
+        #winner{
+        margin: auto;
+        margin-top: 50px;
+        background-color: orange;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        width: 300px;
+        text-align: center;
+        color: white;
+        height: 100px;
+        border: 2px solid red;
+        font-family:'Times New Roman', Times, serif;
+        border-radius: 5px;
+        font-size: 30px;
+        font-weight: bold;
+        }
+        #member-1, #member-2, #member-3{
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        display:inline-block;
+        margin: 5% 13.5% 5% 13.5%;
+        width: 100px;
+        text-align: center;
+        color: white;
+        font-size: 70px;
+        height: 100px;
+        border: 2px solid red;
+        }
+        #roll{
+            padding: 10px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            margin: 0% 40% 0% 46.5%;
+            border: none;
+            background-color: rgb(250, 66, 10);
+            color: white;
+            font-family:'Times New Roman', Times, serif;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #roll:hover{
+            background-color: whitesmoke;
+            color: orangered;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="winner"></div>
+    <div id="member-1"></div>
+    <div id="member-2"></div>
+    <div id="member-3"></div>
+    <button id="roll" onclick="winnerF()">Roll the dice</button>
+</body>
+<script>
+function winnerF(){
+let a=Math.floor(Math.random()*6)+1;
+document.getElementById("member-1").innerText=a;
+
+let b=Math.floor(Math.random()*6)+1;
+document.getElementById("member-2").innerText=b;
+
+let c=Math.floor(Math.random()*6)+1;
+document.getElementById("member-3").innerText=c;
+
+if(a>b && a>c){
+    document.getElementById("winner").innerText="Member-1";
+    document.getElementById("member-1").style.backgroundColor="green";
+}
+else if(b>a && b>c){
+    document.getElementById("winner").innerText="Member-2";
+    document.getElementById("member-2").style.backgroundColor="green";
+}
+else if(c>a && c>b){
+    document.getElementById("winner").innerText="Member-3";
+    document.getElementById("member-3").style.backgroundColor="green";
+}
+
+
+if(a>b && a<c ){
+    document.getElementById("member-1").style.backgroundColor="yellow";
+}
+else if(a>c && a<b){
+    document.getElementById("member-1").style.backgroundColor="yellow";
+}
+else if(b>a && b<c){
+    document.getElementById("member-2").style.backgroundColor="yellow";
+}
+else if(b>c && b<a){
+    document.getElementById("member-2").style.backgroundColor="yellow";
+}
+else if(c>a && c<b){
+    document.getElementById("member-3").style.backgroundColor="yellow";
+}
+else if(c>b && c<a){
+    document.getElementById("member-3").style.backgroundColor="yellow";
+}
+
+
+if(b>a && a<c){
+    document.getElementById("member-1").style.backgroundColor="red";
+}
+else if(a>b && b<c){
+    document.getElementById("member-2").style.backgroundColor="red";
+}
+else if(a>c && c<b){
+    document.getElementById("member-3").style.backgroundColor="red";
+}
+if(a==b){
+    document.getElementById("member-1").style.backgroundColor="blue";
+    document.getElementById("member-2").style.backgroundColor="blue";
+}
+else if(a==c){
+    document.getElementById("member-1").style.backgroundColor="blue";
+    document.getElementById("member-3").style.backgroundColor="blue";
+}
+else if(c==b){
+    document.getElementById("member-3").style.backgroundColor="blue";
+    document.getElementById("member-2").style.backgroundColor="blue";
+}
+if(a==b && c<a){
+    document.getElementById("winner").innerText="Tie";
+}
+else if(a==c && b<a){
+    document.getElementById("winner").innerText="Tie";
+}
+else if(c==b && a<c){
+    document.getElementById("winner").innerText="Tie";
+}
+if(a==b && b==c && c==a){
+    document.getElementById("member-1").style.backgroundColor="blue"
+    document.getElementById("member-2").style.backgroundColor="blue";
+    document.getElementById("member-3").style.backgroundColor="blue";
+    document.getElementById("winner").innerText="Tie";
+}
+}
+</script>
+</html>
