@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK REMINDER APP</title>
+</head>
+<body>
+    <h3>Choose Time</h3>
+    <input type="time" id="time">
+    <button onclick="submit()">Submit</button>
+
+</body>
+
+</html>
+<script>
+    let submit = () => {
+    let time = document.getElementById('time').value;
+    console.log('time:', time)
+    var audio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+
+    let [hour,min] = time.split(":");
+    console.log('hour:', hour)
+    console.log('min:', min)
+    
+    setInterval(() => {
+        let current_time = new Date();
+        if(hour == current_time.getHours() && min == current_time.getMinutes()){
+            alert("ALARM");
+            audio.play();
+        }
+    })
+};
+</script>
