@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+  </head>
+  <body>
+    <h1>Final Checkout</h1>
+    <div>
+      <!-- Append the hotel detail inside div with id: "hotel_details" -->
+    </div>
+    <div id="checkout">
+      <div id="hotel_details"></div>
+      <!-- - The hotel details will be appended inside div with id:- "hotel_details".
+  - The input fields will have ids:- "user_name", "user_number", "check_in" and "check_out"
+  - The book button will have id:- "book"   -->
+  <input type="text" placeholder="username" id="user_name">
+  <input type="text" id="user_number" placeholder="user Number">
+  <input type="text" placeholder="checkin" id="check_in">
+  <input type="text" placeholder="checkout" id="check_out">
+  <button onclick="book()" id="book">Book</button>
+    </div>
+  </body>
+</html>
+<script src="./scripts/checkout.js"></script>
