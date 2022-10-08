@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Star Wars</title>
+
+  <link rel="stylesheet" href="style/index.css">
+	<style>
+
+
+	</style>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+	
+
+<div id="container" style="position: fixed;">
+
+	<div style="text-align: center;">
+	   <img style="cursor: pointer; height: 380px;" src="https://cdn.cdnlogo.com/logos/s/58/star-wars.png" id="star-wars" alt="">
+
+
+    <div id="search">
+	<input type="search" placeholder="Search Characters" id="input" oninput="main()">
+
+	
+	<span  class="material-symbols-outlined" id="search-logo" style="cursor: pointer;" >
+		search
+		</span>
+		<br>
+		<div><ul  id="dropList" > 
+			
+		</ul></div>
+</div>
+</div>
+
+</div>
+<canvas id="canv">
+</canvas> 
+
+
+<span style="display: nones;">
+	<audio controls autoplay loop style="display:none ;"> 
+		<source src="mp3/GTA.mp3" type="">
+	</audio>
+</span>
+</body>
+
+</html>
+<script src="script/canvas.js"></script>
+<script src="script/index.js"></script>
