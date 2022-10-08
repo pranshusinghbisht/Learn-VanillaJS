@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script src="index.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALBUM MAKER</title>
+</head>
+<style>
+    header{
+        width: 100%;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    header div{
+        height: fit-content;
+        width: fit-content;
+    }
+
+    #changeTime{
+        text-align: center;
+        height: 30px;
+    }
+    footer{
+        display: flex;
+        justify-content: center;
+        margin-top: 4%;
+    }
+
+.button {
+background-color: #fa6400;
+border: 1px solid transparent;
+border-radius: .25rem;
+box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+color: #fff;
+cursor: pointer;
+font-size: 16px;
+font-weight: 600;
+padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+transition: all 250ms;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+vertical-align: baseline;
+width: auto;
+}
+.button:hover{
+background-color: #ff3700;
+}
+
+img{
+    width: auto;
+    height: auto;
+}
+</style>
+
+<body>
+    <header>
+        <div>
+            <button class="button" onclick="start()" style="margin-left:20px;">
+                Start
+            </button>
+            <button class="button" onclick="pause()" style="margin-right: 20px;">
+                Pause
+            </button>
+        </div>
+    </header>
+    <div id="changeTime">
+        <input type="number" id="changeT" placeholder="Enter Time (sec)" style="width: 17%; height: 100%;">
+        </div>
+    <main style="text-align:center ;margin-top: 4%;">
+         <img src="" alt="" id="img">
+
+    </main>
+    <footer>
+        <div>
+            <button class="button" onclick="previous()" style="margin-right: 20px">
+                Previous
+            </button>
+            <button class="button" onclick="next()" style="margin-right: 20px;">
+                Next
+            </button>
+
+
+
+        </div>
+
+    </footer>
+    
+</body>
+</html>
+
+<script src="./index.js">
+</script>
