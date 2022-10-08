@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show random receipes</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        nav{
+            height: 120px;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            height: 25%;
+            width:30%
+        }
+        #btn{
+    height: 25%;
+    margin-left: 2%;
+
+}
+        
+    </style>
+</head>
+<body>
+    <div id="nav"></div>
+
+</body>
+</html>
+<script type="module">
+import navbar from './components/navbar.js'
+// console.log('navbar:', navbar);
+let nav = document.getElementById("nav");
+nav.innerHTML = navbar();
+
+let btn = document.getElementById("btn")
+btn.addEventListener("click",main);
+ import {main} from './scripts/fetch&append.js'
+</script>
