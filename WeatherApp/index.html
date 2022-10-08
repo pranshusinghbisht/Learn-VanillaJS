@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Report</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="weather.css">
+
+</head>
+<body>
+    <header>
+    <nav>
+<div id="nav1">
+    <input type="text" name="" id="city" placeholder="Search Your City" style="height: 80%; padding-left: 8px;
+    width: 70%;">
+    <button onclick="getWeather()" class="button">Submit</button>
+</div>
+
+
+<div id="nav2">
+    <span class="material-symbols-outlined" style="cursor: pointer;">
+        near_me
+        </span>
+        <div>Different weather?</div>
+    <div>Metric C, m/s</div>
+    <div>Imperial: F, mph</div>
+
+</div>
+
+</nav>
+</header>
+<h1 id="h1">Weather Report</h1>
+<main>
+    <div id="cont-father">
+    <div id="container">
+
+    </div>
+</div>
+    <div id="map">
+        <div class="gmap_canvas" style="height: 100% ;background-color: #ff3700 ;display: flex; justify-content: center; align-items: center;"><iframe width="80%" height="500" id="gmap_canvas"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0" ></iframe><br></div>
+    </div>
+</main>
+
+
+</body>
+</html>
+<script src="weather.js"></script>

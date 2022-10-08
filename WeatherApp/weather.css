@@ -1,0 +1,326 @@
+    /* This below property i have used with the help of Google Font */
+    @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+    .material-symbols-outlined {
+  font-variation-settings:  
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Paytone One', sans-serif;
+    font-size: larger;
+    text-align: center;
+}
+header{
+    width: 100%;
+    /* background-color: aqua; */
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+}
+    nav{
+        display: flex;
+        /* border: 1px solid green; */
+        height: 70%;
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+    }
+    #nav1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+/* border: 1px solid red; */
+height: 70%;
+width: 30%;
+    }
+    #nav2{
+        display: flex;
+        align-items: center;
+        /* border: 1px solid red; */
+height: 70%;
+width: 40%;
+justify-content: space-around;
+    }
+
+    #nav2 div{
+        cursor: pointer;
+    }
+
+    main{
+        height: 700px;
+        width: 100%;
+        display: flex;
+    }
+    #cont-father{
+        width: 40%;
+        /* background: rgb(143, 28, 28); */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #container{
+text-align: center;
+    }
+
+#map{
+    width: 60%;
+
+}
+
+    .button {
+        background-color: #ff3700;
+    color: #f2f2f2;
+        height: 100%;
+border: 1px solid transparent;
+border-radius: .25rem;
+box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+cursor: pointer;
+font-size: 16px;
+font-weight: 600;
+padding: calc(-0.125rem - 1px) calc(1.5rem - 1px);
+transition: all 250ms;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+vertical-align: baseline;
+width: auto;
+}
+.button:hover{
+background-color: #cf4b27;
+}
+
+#h1{
+    display: none;
+}
+
+
+@media all and (min-width:500px) and (max-width:900px) {
+    .material-symbols-outlined {
+        font-variation-settings:  
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+      }
+      
+      *{
+          padding: 0;
+          margin: 0;
+      }
+      body{
+          font-family: 'Paytone One', sans-serif;
+          font-size: larger;
+          /* text-align: center; */
+      }
+      header{
+          width: 100%;
+          /* background-color: aqua; */
+          height: 80px;
+          display: flex;
+          align-items: center;
+          background-color: #f2f2f2;
+      }
+          nav{
+              display: flex;
+              /* border: 1px solid green; */
+              height: 70%;
+              width: 100%;
+
+
+          }
+          #nav1{
+              display: flex;
+              align-items: center;
+              justify-content: center;
+      /* border: 1px solid red; */
+      height: 70%;
+      width: 80%;
+          }
+          #nav2{
+      display: none;
+          }
+      
+          #nav2 div{
+              cursor: pointer;
+          }
+      
+          main{
+              height: 700px;
+              width: 100%;
+
+              display: block;
+          }
+          #cont-father{
+            margin-top: 10%;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+          }
+          #container{
+      text-align: center;
+          }
+      
+      #map{
+        margin-top: 10%;
+          width: 100%;
+          height: fit-content;
+      }
+      
+
+          .button {
+              background-color: #ff3700;
+          color: #f2f2f2;
+              height: 100%;
+      border: 1px solid transparent;
+      border-radius: .25rem;
+      box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      padding: calc(-0.125rem - 1px) calc(1.5rem - 1px);
+      transition: all 250ms;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      vertical-align: baseline;
+      width: auto;
+      }
+      .button:hover{
+      background-color: #9b4e39;
+      }
+
+      #h1{
+        font-size: 42px;
+        position: relative;
+top: 70px;
+      }
+      p{
+        font-size: 20px;
+      }
+
+      
+}
+
+
+
+
+
+
+@media all  and (max-width:499px) {
+    .material-symbols-outlined {
+        font-variation-settings:  
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+      }
+      
+      *{
+          padding: 0;
+          margin: 0;
+      }
+      body{
+          font-family: 'Paytone One', sans-serif;
+          font-size: larger;
+          text-align: center;
+      }
+      header{
+          width: 100%;
+          /* background-color: aqua; */
+          height: 80px;
+          display: flex;
+          align-items: center;
+          background-color: #f2f2f2;
+      }
+          nav{
+              display: flex;
+              /* border: 1px solid green; */
+              height: 70%;
+              width: 100%;
+
+
+          }
+          #nav1{
+              display: flex;
+              align-items: center;
+              justify-content: center;
+      /* border: 1px solid red; */
+      height: 70%;
+      width: 80%;
+          }
+          #nav2{
+      display: none;
+          }
+      
+          #nav2 div{
+              cursor: pointer;
+          }
+      
+          main{
+              height: 700px;
+              width: 100%;
+
+              display: block;
+          }
+          #cont-father{
+            margin-top: 10%;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+          }
+          #container{
+      text-align: center;
+          }
+      
+      #map{
+        margin-top: 10%;
+          width: 100%;
+          height: fit-content;
+      }
+      
+
+          .button {
+              background-color: #ff3700;
+          color: #f2f2f2;
+              height: 100%;
+      border: 1px solid transparent;
+      border-radius: .25rem;
+      box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      padding: calc(-0.125rem - 1px) calc(1.5rem - 1px);
+      transition: all 250ms;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      vertical-align: baseline;
+      width: auto;
+      }
+      .button:hover{
+      background-color: #9b4e39;
+      }
+
+      #h1{
+        font-size: 35px;
+        position: relative;
+        top: 32px;
+      }
+      p{
+        font-size: 20px;
+      }
+
+      
+}
