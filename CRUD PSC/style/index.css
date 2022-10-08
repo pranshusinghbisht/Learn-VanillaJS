@@ -1,0 +1,25 @@
+header{
+    background-color: aquamarine;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    text-align: center;
+}
+#form{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    height: 30vh;
+    row-gap: 5%;
+    margin-top: 10%;
+}
+input , #submit, select {
+    width: 100%;
+    height: 25px;
+}
+#users , #submit{
+    cursor: pointer;
+}
