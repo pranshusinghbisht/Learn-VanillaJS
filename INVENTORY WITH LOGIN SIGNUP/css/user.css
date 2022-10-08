@@ -1,0 +1,26 @@
+h1{
+    text-align: center;
+}
+body>div{
+    border: 1px solid black;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+table{
+    text-align: center;
+    border: 1px solid green;
+    width: 50%;
+    height: fit-content;
+}
+thead{
+    background-color: aqua;
+}
+
+tr{
+    border: 1px solid black;
+}
+td{
+    border: 1px solid black;
+}

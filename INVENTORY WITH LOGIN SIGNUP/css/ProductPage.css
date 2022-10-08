@@ -1,0 +1,13 @@
+main{
+    height: 80vh;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main>div{
+    width: 30%;
+    display: grid;
+    height: 60%;
+    row-gap: 2%;
+}
